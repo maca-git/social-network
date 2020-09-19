@@ -1,0 +1,13 @@
+.navbar {
+  grid-area: navbar;
+  border: 1px solid #000;
+}
+.navbar li {
+  list-style: none;
+}
+.navbar a {
+  color: #000;
+}
+.navbar a.active {
+  color: gold;
+}

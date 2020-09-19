@@ -1,0 +1,8 @@
+.post {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+}
+.postavatar {
+  width: 40px;
+  border-radius: 50%;
+}
