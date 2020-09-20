@@ -1,33 +1,20 @@
 import React from 'react';
+import Dialog from './Dialog/Dialog';
 import style from './Dialogs.module.css';
+import Message from './Message/Message';
 
 const Dialogs = () => {
   return (
     <div className={style.dialogsContainer}>
       <div className={style.dialogs}>
-        <div className={style.dialog + ' ' + style.active}>
-          Dimych
-        </div>
-        <div className={style.dialog}>
-          Andrey
-        </div>
-        <div className={style.dialog}>
-          Vasiliy
-        </div>
-        <div className={style.dialog}>
-          Eldar
-        </div>
+        <Dialog name="Dimich" id="1"/>
+        <Dialog name="Alexey" id="2"/>
+        <Dialog name="Igor" id="3"/>
+        <Dialog name="Sergey" id="4"/>
       </div>
       <div className={style.messages}>
-        <div className={style.message}>
-          Hi
-        </div>
-        <div className={style.message}>
-          How your name?
-        </div>
-        <div className={style.message}>
-          Yo!
-        </div>
+        <Message text="Hello!"/>
+        <Message text="Yo!"/>
       </div>
 
     </div>
