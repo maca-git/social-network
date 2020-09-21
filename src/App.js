@@ -11,8 +11,8 @@ import Music from './components/Music/Music';
 
 const App = (props) => {
 
-  const renderProfile = () => <Profile postsData={props.postsData} />
-  const renderDialogs = () => <Dialogs dialogsData={props.dialogsData} messagesData={props.messagesData} />
+  const renderProfile = () => <Profile state={props.state.profilePage} />
+  const renderDialogs = () => <Dialogs state={props.state.messagesPage} />
 
   return (
     <BrowserRouter>
