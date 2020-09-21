@@ -1,0 +1,10 @@
+.friends {
+  margin-top: 20px;
+}
+.friendsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+h4 {
+  text-align: center;
+}
