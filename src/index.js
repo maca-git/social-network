@@ -4,9 +4,14 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+let postsData = [
+  { id: 1, message: "Hi, how are you?" },
+  { id: 2, message: "Its my fists post!" },
+]
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App postsData={postsData}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
