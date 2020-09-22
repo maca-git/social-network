@@ -11,7 +11,7 @@ import Music from './components/Music/Music';
 
 const App = (props) => {
 
-  const renderProfile = () => <Profile state={props.state.profilePage} />
+  const renderProfile = () => <Profile state={props.state.profilePage} addPost={props.addPost} />
   const renderDialogs = () => <Dialogs state={props.state.messagesPage} />
 
   return (

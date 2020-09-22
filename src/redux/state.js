@@ -1,3 +1,6 @@
+import {rerenderEntireTree} from './../render';
+
+
 let state = {
   profilePage: {
     postsData: [
@@ -24,6 +27,14 @@ let state = {
       { id: 3, name: "Igor", avatar: "https://pm1.narvii.com/6544/9e5275d11654e09a0786ea750c4c9f64ccee5a58_hq.jpg"}
     ]
   }
+}
+export let addPost = (postMessage) => {
+  let newPost = {
+    id: 3,
+    message: postMessage
+  };
+  state.profilePage.postsData.push(newPost);
+  rerenderEntireTree(state);
 }
 
 export default state;
