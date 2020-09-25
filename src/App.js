@@ -12,7 +12,7 @@ import Music from './components/Music/Music';
 const App = (props) => {
 
   const renderProfile = () => <Profile state={props.state.profilePage} dispatch={props.dispatch}/>
-  const renderDialogs = () => <Dialogs state={props.state.messagesPage} />
+  const renderDialogs = () => <Dialogs state={props.state.messagesPage} dispatch={props.dispatch}/>
 
   return (
     <BrowserRouter>
