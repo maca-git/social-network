@@ -6,7 +6,6 @@ import { sendMessageActionCreator, onMessageChangeActionCreator } from './../../
 
 
 const Dialogs = (props) => {
-
   let textarea = React.createRef();
 
   let sendMessage = () => { 
