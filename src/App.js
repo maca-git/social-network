@@ -10,7 +10,6 @@ import Music from './components/Music/Music';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 const App = (props) => {
-
   const renderProfile = () => <Profile store={props.store}/>
   const renderDialogs = () => <DialogsContainer store={props.store}/>
 
