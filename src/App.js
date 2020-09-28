@@ -10,14 +10,15 @@ import Music from './components/Music/Music';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 const App = (props) => {
-  const renderProfile = () => <Profile store={props.store}/>
-  const renderDialogs = () => <DialogsContainer store={props.store}/>
+  const renderProfile = () => <Profile/>
+  const renderDialogs = () => <DialogsContainer/>
 
   return (
     <BrowserRouter>
       <div className="app">
         <Header />
-        <Navbar state={props.state.navbarState}/>
+        <Navbar/>
+        {/* <Navbar state={props.state.navbarState}/> */}
         <div className="content">
           <Route path='/profile' render={renderProfile} />
           <Route path='/dialogs' render={renderDialogs} />
