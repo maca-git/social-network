@@ -8,10 +8,12 @@ import Settings from './components/Settings/Settings';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 const App = (props) => {
   const renderProfile = () => <Profile/>
   const renderDialogs = () => <DialogsContainer/>
+  const renderUsers = () => <UsersContainer/>
 
   return (
     <BrowserRouter>
@@ -22,6 +24,7 @@ const App = (props) => {
         <div className="content">
           <Route path='/profile' render={renderProfile} />
           <Route path='/dialogs' render={renderDialogs} />
+          <Route path='/users' render={renderUsers} />
           <Route path='/music' component={Music} />
           <Route path='/news' component={News} />
           <Route path='/settings' component={Settings} />
