@@ -1,7 +1,11 @@
 import React from 'react';
+import Preloader from '../../common/Preloader/Preloader';
 import style from './Info.module.css';
 
-const Info = () => {
+const Info = (props) => {
+  if (!props.profile) {
+    return <Preloader/>
+  }
   return (
     <div>
       <div className={style.banner}>
@@ -9,17 +13,17 @@ const Info = () => {
       </div>
       <div className={style.infoconteiner}>
         <div className={style.avatar}>
-          <img src="https://www.kindpng.com/picc/m/137-1370686_anime-avatar-png-transparent-avatar-gaming-logo-png.png" alt="" />
+          <img src={props.profile.photos.large} alt="" />
         </div>
         <div className={style.personalinfo}>
           <p className={style.name}>
-            Dmitriy Schupalenko
+            {props.profile.fullName}
           </p>
-          <p className={style.birth}>
-            Date of Birth: 2 january
+          <p>
+            {props.profile.aboutMe}
           </p>
-          <p className={style.city}>
-            City: Minsk
+          <p>
+            {props.profile.contacts.twitter}
           </p>
         </div>
       </div>
