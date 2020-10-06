@@ -3,7 +3,7 @@ import Post from './Post/Post';
 import style from './Posts.module.css';
 
 const Posts = (props) => {
-  const postsElements = props.posts.map(post => <Post message={post.message} />);
+  const postsElements = props.posts.map(post => <Post message={post.message} key={post.id}/>);
 
   let textarea = React.createRef();
 
