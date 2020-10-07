@@ -22,7 +22,7 @@ const App = (props) => {
         <Navbar/>
         {/* <Navbar state={props.state.navbarState}/> */}
         <div className="content">
-          <Route path='/profile/:userId' render={renderProfile} />
+          <Route path='/profile/:userId?' render={renderProfile} />
           <Route path='/dialogs' render={renderDialogs} />
           <Route path='/users' render={renderUsers} />
           <Route path='/music' component={Music} />
