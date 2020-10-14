@@ -1,21 +1,24 @@
 import React from 'react';
 import Preloader from '../../common/Preloader/Preloader';
 import style from './Info.module.css';
+import ProfileStatus from './ProfileStatus';
 
 const Info = (props) => {
+  debugger
   if (!props.profile) {
     return <Preloader/>
   }
   return (
     <div>
-      <div className={style.banner}>
+      {/* <div className={style.banner}>
         <img src="http://www.rknec.edu/Students/img/srceventdbanner.jpg" alt="banner" />
-      </div>
+      </div> */}
       <div className={style.infoconteiner}>
         <div className={style.avatar}>
           <img src={props.profile.photos.large} alt="" />
         </div>
         <div className={style.personalinfo}>
+          <ProfileStatus status={props.profile.aboutMe}/>
           <p className={style.name}>
             {props.profile.fullName}
           </p>
@@ -25,6 +28,7 @@ const Info = (props) => {
           <p>
             {props.profile.contacts.twitter}
           </p>
+          
         </div>
       </div>
     </div>
