@@ -2,6 +2,7 @@ import React from 'react';
 import Preloader from '../../common/Preloader/Preloader';
 import style from './Info.module.css';
 import ProfileStatus from './ProfileStatus';
+import userPhoto from './../../../assets/images/user.svg';
 
 const Info = (props) => {
   debugger
@@ -15,10 +16,10 @@ const Info = (props) => {
       </div> */}
       <div className={style.infoconteiner}>
         <div className={style.avatar}>
-          <img src={props.profile.photos.large} alt="" />
+          <img src={props.profile.photos.large || userPhoto} alt="" />
         </div>
         <div className={style.personalinfo}>
-          <ProfileStatus status={props.profile.aboutMe}/>
+          <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
           <p className={style.name}>
             {props.profile.fullName}
           </p>

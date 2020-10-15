@@ -3,11 +3,12 @@ import Info from './Info/Info';
 import PostsContainer from './Posts/PostsContainer';
 import style from './Profile.module.css';
 
+
 const Profile = (props) => {
 
   return (
     <div className={style.profile}>
-      <Info profile={props.profile}/>
+      <Info profile={props.profile} status={props.status} updateUserStatus={props.updateUserStatus}/>
       <PostsContainer/>
     </div>
   )
