@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addPostActionCreator, onPostChangeActionCreator } from './../../../redux/profile-reduser';
+import { addPostActionCreator } from './../../../redux/profile-reduser';
 import Posts from './Posts';
 
 const mapStateToProps = (state) => {
@@ -11,11 +11,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateNewPostText: (text) => {
-      dispatch(onPostChangeActionCreator(text));
-    },
-    addPost() {
-      dispatch(addPostActionCreator());
+    addPost(post) {
+      dispatch(addPostActionCreator(post));
     }
   }
 }
