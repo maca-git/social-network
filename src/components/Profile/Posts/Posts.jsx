@@ -8,7 +8,7 @@ import { Element } from '../../common/FormsControls/FormsControls';
 const Textarea = Element("textarea");
 const maxLength100 = maxLengthCreator(100);
 
-const Posts = (props) => {
+const Posts = React.memo((props) => {
   const postsElements = props.posts.map(post => <Post message={post.message} key={post.id}/>);
 
   let onAddPost = (formData) => { 
@@ -21,7 +21,7 @@ const Posts = (props) => {
       { postsElements }
     </div>
   )
-}
+})
 
 const AddPostForm = (props) => {
   return(
