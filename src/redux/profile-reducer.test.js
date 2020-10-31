@@ -1,5 +1,5 @@
 import React from 'react';
-const { default: profileReducer, addPostActionCreator, deletePost } = require("./profile-reduser");
+const { default: profileReducer, addPostActionCreator, deletePost } = require("./profile-reducer");
 
   // 1. test data
   let state = {

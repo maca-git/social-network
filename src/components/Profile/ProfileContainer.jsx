@@ -1,6 +1,6 @@
 import React from 'react';
 import Profile from './Profile';
-import { getUserProfile, getUserStatus, updateUserStatus } from './../../redux/profile-reduser';
+import { getUserProfile, getUserStatus, updateUserStatus } from './../../redux/profile-reducer';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';

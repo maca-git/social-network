@@ -4,7 +4,7 @@ import Field from 'redux-form/lib/Field';
 import reduxForm from 'redux-form/lib/reduxForm';
 import { required } from '../../utils/validators/validators';
 import { Element } from '../common/FormsControls/FormsControls';
-import { login } from '../../redux/auth-reduser';
+import { login } from '../../redux/auth-reducer';
 import { Redirect } from 'react-router-dom';
 import styles from "./../common/FormsControls/FormsControls.module.css";
 

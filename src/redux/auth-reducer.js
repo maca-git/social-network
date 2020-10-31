@@ -11,7 +11,7 @@ let initialState = {
   isAuth: false
 }
 
-const authReduser = (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
   switch(action.type) {
     case SET_AUTH_USER_DATA:
       return {
@@ -61,4 +61,4 @@ export const logout = () => {
   }
 }
 
-export default authReduser;
+export default authReducer;

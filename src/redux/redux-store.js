@@ -1,11 +1,11 @@
 import thunkMiddleware from "redux-thunk";
 import {applyMiddleware, combineReducers, createStore} from "redux";
-import authReduser from "./auth-reduser";
-import dialogReducer from "./dialogs-reduser";
-import navbarReducer from "./navbar-reduser";
-import profileReducer from "./profile-reduser";
-import usersReducer from "./users-reduser";
-import appReducer from "./app-reduser";
+import authReducer from "./auth-reducer";
+import dialogReducer from "./dialogs-reducer";
+import navbarReducer from "./navbar-reducer";
+import profileReducer from "./profile-reducer";
+import usersReducer from "./users-reducer";
+import appReducer from "./app-reducer";
 import {reducer as formReducer} from 'redux-form';
 
 let reducers = combineReducers({
@@ -13,7 +13,7 @@ let reducers = combineReducers({
   messagesPage: dialogReducer,
   navbarState: navbarReducer,
   usersPage: usersReducer,
-  auth: authReduser,
+  auth: authReducer,
   form: formReducer,
   app: appReducer,
 });
