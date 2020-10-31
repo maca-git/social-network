@@ -1,0 +1,11 @@
+.pagination {
+  display: inline-flex;
+  width: 100%;
+  overflow: hidden; 
+}
+.pagination span {
+  padding: 0 3px;
+}
+.selectedPage {
+  font-weight: bold;
+}

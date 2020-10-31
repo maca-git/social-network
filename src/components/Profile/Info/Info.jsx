@@ -4,31 +4,27 @@ import style from './Info.module.css';
 import ProfileStatus from './ProfileStatus';
 import userPhoto from './../../../assets/images/user.svg';
 
-const Info = (props) => {
-  if (!props.profile) {
+const Info = ({profile, status, updateUserStatus}) => {
+  if (!profile) {
     return <Preloader/>
   }
   return (
     <div>
-      {/* <div className={style.banner}>
-        <img src="http://www.rknec.edu/Students/img/srceventdbanner.jpg" alt="banner" />
-      </div> */}
       <div className={style.infoconteiner}>
         <div className={style.avatar}>
-          <img src={props.profile.photos.large || userPhoto} alt="" />
+          <img src={profile.photos.large || userPhoto} alt="" />
         </div>
         <div className={style.personalinfo}>
-          <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
+          <ProfileStatus status={status} updateUserStatus={updateUserStatus}/>
           <p className={style.name}>
-            {props.profile.fullName}
+            {profile.fullName}
           </p>
           <p>
-            {props.profile.aboutMe}
+            {profile.aboutMe}
           </p>
           <p>
-            {props.profile.contacts.twitter}
+            {profile.contacts.twitter}
           </p>
-          
         </div>
       </div>
     </div>
