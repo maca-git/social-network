@@ -1,6 +1,7 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
+import store from './redux/redux-store';
 import Navbar from './components/Navbar/Navbar';
 import Settings from './components/Settings/Settings';
 import News from './components/News/News';
@@ -11,7 +12,7 @@ import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
 import { initializeApp } from './redux/app-reducer';
-import { connect } from 'react-redux';
+import { connect, Provider } from 'react-redux';
 import { compose } from 'redux';
 import Preloader from './components/common/Preloader/Preloader';
 
@@ -52,4 +53,18 @@ const mapStateToProps = (state) => ({
   initialized: state.app.initialized
 })
 
-export default compose(connect(mapStateToProps, {initializeApp}))(App);
+const AppContainer = compose(connect(mapStateToProps, {initializeApp}))(App);
+
+const MainApp = (props) => {
+  return (
+  <React.StrictMode>
+    <BrowserRouter>
+      <Provider store={store}>
+        <AppContainer/>
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>
+  )
+}
+
+export default MainApp;
