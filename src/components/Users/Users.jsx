@@ -15,7 +15,7 @@ let Users = ({currentPage, totalUsersCount, pageSize, onPageChanged, users, ...p
           unfollow={props.unfollow}
           key={user.id} />)
       }
-      <Paginator currentPage={currentPage} totalUsersCount={totalUsersCount} pageSize={pageSize} onPageChanged={onPageChanged}/>
+      <Paginator currentPage={currentPage} totalItemsCount={totalUsersCount} pageSize={pageSize} onPageChanged={onPageChanged}/>
     </div>
   )
 }

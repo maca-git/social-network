@@ -1,11 +1,12 @@
-.pagination {
-  display: inline-flex;
-  width: 100%;
-  overflow: hidden; 
+.paginator {
+  margin: 10px;
 }
-.pagination span {
-  padding: 0 3px;
+.pageNumber {
+  padding: 2px;
+  border: 1px solid grey;
 }
-.selectedPage {
+
+.pageNumber.selectedPage {
   font-weight: bold;
+  border-color: black;
 }
