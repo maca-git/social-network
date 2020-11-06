@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
 import store from './redux/redux-store';
 import Navbar from './components/Navbar/Navbar';
@@ -19,6 +19,7 @@ const Music = React.lazy(() => import('./components/Music/Music'));
 
 
 class App extends React.Component {
+  
   componentDidMount() {
     this.props.initializeApp();
   }
@@ -35,13 +36,17 @@ class App extends React.Component {
           {/* <Navbar state={props.state.navbarState}/> */}
           <div className="content">
             <React.Suspense fallback={<Preloader />}>
-              <Route path='/profile/:userId?' render={renderProfile} />
-              <Route path='/dialogs' render={renderDialogs} />
-              <Route path='/users' render={renderUsers} />
-              <Route path='/music' component={Music} />
-              <Route path='/news' component={News} />
-              <Route path='/settings' component={Settings} />
-              <Route path='/login' component={Login} />
+              <Switch>
+                <Route path='/' exact><Redirect to='/profile'/></Route>
+                <Route path='/profile/:userId?' render={renderProfile} />
+                <Route path='/dialogs' render={renderDialogs} />
+                <Route path='/users' render={renderUsers} />
+                <Route path='/music' component={Music} />
+                <Route path='/news' component={News} />
+                <Route path='/settings' component={Settings} />
+                <Route path='/login' component={Login} />
+                <Route path='*' render={()=> <div>404</div>}/>
+              </Switch>
             </React.Suspense>
           </div>
         </div>
